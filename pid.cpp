@@ -15,5 +15,9 @@ int pidInstance::pidCalc(double desiredRPM, double currentRPM){
     errorSum = errorSum + (error*CONTROL_LOOP_TIME);
     errorRateOfChange = (error - previousError)/CONTROL_LOOP_TIME;
     previousError = error;
-    return ((KD*error)+(KI*errorSum)+(KD*errorRateOfChange))*MOTOR_CONV_FACTOR;
+    //Note: I'm adding the output of the PID to itself because with velocity pid
+    //      as error goes to 0 P becomes very small. The velocity will decrease
+    //      when you want it to stay at a constant high speed. This works because
+    //      your taking the derivative of both sides of the equation
+    output += ((KP*error)+(KI*errorSum)+(KD*errorRateOfChange))*MOTOR_CONV_FACTOR;
 }
