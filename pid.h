@@ -2,9 +2,6 @@
 #define __PID_H__
 
 #define CONTROL_LOOP_TIME 0.02 //20 Millisecond loop time
-#define MOTOR_CONV_FACTOR 0.1 //Number or equation that converts +/- RPM to 
-							  //motor speed (0.10) is just a dummy number
-							  //that I added here
 #define KP 5
 #define KI 2
 #define KD 1

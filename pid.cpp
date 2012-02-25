@@ -19,5 +19,5 @@ int pidInstance::pidCalc(double desiredRPM, double currentRPM){
     //      as error goes to 0 P becomes very small. The velocity will decrease
     //      when you want it to stay at a constant high speed. This works because
     //      your taking the derivative of both sides of the equation
-    output += ((KP*error)+(KI*errorSum)+(KD*errorRateOfChange))*MOTOR_CONV_FACTOR;
+    output += ((KP*error)+(KI*errorSum)+(KD*errorRateOfChange));
 }
