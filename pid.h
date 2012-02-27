@@ -1,11 +1,6 @@
 #ifndef __PID_H__
 #define __PID_H__
 
-#define CONTROL_LOOP_TIME 0.02 //20 Millisecond loop time
-#define KP 5
-#define KI 2
-#define KD 1
-
 class pidInstace{
 
 	double error;             //Proportional (P)
